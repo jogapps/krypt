@@ -1,0 +1,52 @@
+<%- include("../../partials/header") %>
+<%- include("../../partials/user_sidebar") %>
+<!-- Main Content -->
+<div class="main-content">
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <%= packages.length < 1 ? "No Packages available for now" : "" %>
+                <%  for (let i = 0; i < packages.length; i++ ) { %>
+                    <!-- each card -->
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="pricing pricing-highlight">
+                        <div class="pricing-title">
+                            <%= packages[i]['name'] %>
+                        </div>
+                        <div class="pricing-padding">
+                            <div class="pricing-price">
+                                <div><%= packages[i]['duration'] %></div>
+                                <div>Duration(Days)</div>
+                            </div>
+                            <div class="pricing-details">
+                                <div class="pricing-item">
+                                    <div class="pricing-item-label">Maximum Investment $<%= packages[i]['max_investment'] %></div>
+                                </div>
+                                <div class="pricing-item">
+                                    <div class="pricing-item-label">Minimum Investment $<%= packages[i]['min_investment'] %></div>
+                                </div>
+                                <div class="pricing-item">
+                                    <div class="pricing-item-label">Interest <%= packages[i]['interest'] %>%</div>
+                                </div>
+                                <div class="pricing-item">
+                                    <div class="pricing-item-label">Description <%= packages[i]['description'] %>%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-cta">
+                            <a href="/packages/<%= packages[i]['id'] %>" class="btn btn-dark  btn-lg" >Invest Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- each card ended -->
+                <% } %>    
+            </div>
+        </div>
+    </section>
+</div>
+<%- include("../../partials/user_footer2") %>
+
+<!-- cryptedge scripts -->
+</body>
+
+</html>

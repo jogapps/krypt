@@ -1,0 +1,134 @@
+<!-- header -->
+<%- include("../../partials/header") %>
+<%- include("../../partials/user_sidebar") %>
+<!-- Main Content -->
+<div class="main-content">
+    <%- include("../../partials/alerts") %>
+    <section class="section">
+        <div class="row ">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card card-statistic-1">
+                    <div class="card-icon l-bg-cyan">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="padding-20">
+                            <div class="text-right">
+                                <h3 class="font-light mb-0">
+                                    <i class="ti-arrow-up text-success"></i> $<%= wallet %>.00
+                                </h3>
+                                <span class="text-muted">Total Wallet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-info">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="padding-20">
+                            <div class="text-right">
+                                <h3 class="font-light mb-0">
+                                    <i class="ti-arrow-up text-success"></i> $<%= user.referral_amount %>.00
+                                </h3>
+                                <span class="text-muted">Referrals</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="card card-statistic-1">
+                    <div class="card-icon bg-info">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="card-wrap">
+                        <div class="padding-20">
+                            <div class="text-right">
+                                <h3 class="font-light mb-0">
+                                    <i class="ti-arrow-up text-success"></i>$1/₦<span id="dollar_rate"><%= dollar.amount %></span>.00
+                                </h3>
+                                <span class="text-muted">Crptedge Dollar Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row px-4">
+                                <!-- <div class="col-lg-6 col-md-6 col-sm-9 col-xs-6 pr-0 pt-3">
+                                    <div class="card-content">
+                                        
+                                        <p></p>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <h2 class="font-18">For Bank Deposits</h2>
+                                        <p><%= bank.bank_name %></p>
+                                        <p class="font-15"><%= bank.acc_name %></p>
+                                        <p><%= bank.acc_number %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #eee; padding: 5%;">
+
+        <div class="row container-fluid">
+            <div class="col-lg-12 " style="padding: 2% 7%;">
+                <input type="text" placeholder="Enter Amount" class="form-control text-center" id="amount"
+                    name="amount">
+                <input type="hidden" id="user_email" value="<%= email %>">
+                <input type="hidden" id="user_phone" value="<%= phone %>">
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Pay with Paystack</label>
+                    <button type="button" class="btn btn-dark btn-block btn-lg"
+                        onclick="payWithPaystack()">Paystack</button>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <label for="">Pay with Crypto</label>
+                    <button type="button" class="btn btn-dark btn-block btn-lg"
+                        onclick="payWithCryptos()">Crypto</button>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <form action="/uploadproof" method="POST" enctype="multipart/form-data">
+                        <label for="">Upload Proof of Payment</label>
+                        <input type="text" name="amount" id="proof_amount" class="form-control" placeholder="amount">
+                        <input type="file" name="image" class="form-control" placeholder="upload proof of payment">
+                        <button type="submit" class="btn btn-dark btn-block btn-lg" aria-expanded="true">
+                            Bank Deposit
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- arrange the payment platforms into sections
+        from paystack, crypto, and deposits -->
+    </section>
+</div>
+<%- include("../../partials/user_footer2") %>
+
+<!-- cryptedge scripts -->
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="https://js.paylot.co/v1/inline.min.js"></script>
+<script src="/js/payments.js"></script>
+</body>
+
+</html>

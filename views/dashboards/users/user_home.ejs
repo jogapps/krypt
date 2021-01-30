@@ -1,0 +1,211 @@
+<!-- header -->
+<%- include("../../partials/header") %>
+<%- include("../../partials/user_sidebar") %>
+<!-- Main Content -->
+<div class="main-content">
+    <section class="section">
+        <div class="row ">
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fas fa-envelope"
+                                                style="color: blue; margin-right: 5px;" aria-hidden="true"></i></i>Email
+                                        </h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3"><%= user.email %></h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fas fa-wallet"
+                                                style="color: blue; margin-right: 5px;"
+                                                aria-hidden="true"></i></i>Wallet</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3">$<%= wallet %>.00</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-6 col-md-6 col-sm-9 col-xs-6 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fas fa-wallet"
+                                                style="color: blue; margin-right: 5px;"
+                                                aria-hidden="true"></i></i>Referral Earned</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3">$<%= user.referral_amount %>.00</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fas fa-link"
+                                                style="color: blue; margin-right: 4px;"
+                                                aria-hidden="true"></i></i>Referrals</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3"><%= referral %></h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fas fa-gift"
+                                                style="color: blue; margin-right: 5px;" aria-hidden="true"></i></i>Total
+                                            Investments</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3"><%= investment %></h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18"><i class="fa fa-check-circle"
+                                                style="color: blue; margin-right: 5px;"
+                                                aria-hidden="true"></i></i>Active Investments</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 pl-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18  ml-3"><%= active_investment %></h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18">Ref Link <br> <span class="text-muted"><a
+                                                    href="<%= cryptedge.website %><%= user.reference %>"><%= cryptedge.website %><%= user.reference %></a></span>
+                                        </h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="card-statistic-4">
+                        <div class="align-items-center justify-content-between">
+                            <div class="row ">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pr-0 pt-3">
+                                    <div class="card-content">
+                                        <p></p>
+                                        <h2 class="font-18">Account Status: <%= kyc== 1 ? 'Verified' : 'Not-Verified' %>
+                                            <br><br>
+                                            <% if(kyc != 1) { %>
+                                            <span class="text-muted">Upload valid documents in settings to Verify
+                                                account</span><br>
+                                            <span class="text-muted">Only Verified accounts can access the withdrawals
+                                                Page</span>
+                                            <% } %>
+                                        </h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<%- include("../../partials/user_footer") %>

@@ -1,0 +1,52 @@
+<!-- header -->
+<%- include("../../partials/header") %>
+<%- include("../../partials/user_sidebar") %>
+
+<!-- Main Content -->
+<div class="main-content">
+    <%- include("../../partials/alerts") %>
+    <section class="section">
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Deposits</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped" id="table-1">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Amount</th>
+                                            <th>Bank</th>
+                                            <th>Account Name</th>
+                                            <th>Account Number</th>
+                                            <th>Status</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <%  for (let i = 0; i < withdrawals.length; i++ ) { %>
+                                        <tr>
+                                            <td><%= i + 1 %></td>
+                                            <td>$<%= withdrawals[i].amount %>.00</td>
+                                            <td><%= withdrawals[i].bank %></td>
+                                            <td><%= withdrawals[i].acc_name %></td>
+                                            <td><%= withdrawals[i].acc_number %></td>
+                                            <td><%= withdrawals[i].status != 0 ? 'Processed' : 'UnProcessed' %></td>
+                                            <td><%= withdrawals[i].createdAt %></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<%- include("../../partials/user_footer") %>
